@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package microservice;
+option go_package = "/proto";
+
+// The User message contains user details
+message User {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+// The UserService defines an RPC service for managing users
+service UserService {
+  rpc GetUser (UserRequest) returns (UserResponse);
+}
+
+// Request message for getting a user
+message UserRequest {
+  int32 id = 1;
+}
+
+// Response message for returning user details
+message UserResponse {
+  User user = 1;
+}

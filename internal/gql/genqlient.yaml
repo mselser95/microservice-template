@@ -1,0 +1,27 @@
+# Default genqlient config; for full documentation see:
+# https://github.com/Khan/genqlient/blob/main/docs/genqlient.yaml
+schema: schema.graphql
+operations:
+
+generated: generated.go
+use_struct_references: true
+bindings:
+  uuid:
+    type: github.com/google/uuid.UUID
+  timestamp:
+    type: string
+  jsonb:
+    type: encoding/json.RawMessage
+  bytea:
+    type: encoding/json.RawMessage
+  float8:
+    type: float32
+  _text:
+    type: string
+  bigint:
+    type: int64
+  smallint:
+    type: int
+  numeric:
+    type: float64
+optional: pointer
